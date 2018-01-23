@@ -1,4 +1,4 @@
 package com.jammify.userjammify.controller;
 
-public class UserController {
+public class PersonController {
 }

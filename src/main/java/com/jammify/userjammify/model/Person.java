@@ -4,18 +4,15 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "PERSON")
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PERSON_ID")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+
     private Long id;
 
-    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "EMAIl")
     private String email;
 
     public Person(){};

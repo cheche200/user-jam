@@ -1,5 +1,8 @@
 package com.jammify.userjammify.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -8,14 +11,17 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-
     private Long id;
 
+    @NotBlank
     private String name;
 
+    @Email
     private String email;
 
-    public Person(){};
+    public Person(){
+        //Intentionally empty
+    }
 
     private Person(PersonBuilder builder){
         this.id = builder.id;
@@ -52,14 +58,13 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(id, person.id) &&
-                Objects.equals(email, person.email);
+        return Objects.equals(id, person.id);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, email);
+        return Objects.hash(id);
     }
 
     public static class PersonBuilder{

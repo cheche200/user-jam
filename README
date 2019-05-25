@@ -1,0 +1,10 @@
+Docker instructions:
+
+To build the image:
+1.- Create a file in the project called: Dockerfile
+2.- Get an image from https://hub.docker.com depending on the technology used
+3.- Run: docker build -f Dockerfile -t docker-spring-boot .
+this will create a portable image of the application, to view a list of the available
+images run: docker images
+4.- To execute you application run:
+docker run -p 8085:8085 docker-spring-boot
